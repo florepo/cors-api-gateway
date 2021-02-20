@@ -11,3 +11,11 @@ provider "aws" {
   region  = "eu-west-3"
   version = "~> 3.29"
 }
+
+module "cors-api" {
+  source = "../module/cors-api"
+
+  providers = {
+    aws              = aws
+  }
+}
